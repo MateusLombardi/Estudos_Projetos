@@ -1,0 +1,137 @@
+class CalculadoraSimples(Calculadora):
+    def calcular(self, num1, num2, operacao):
+        if operacao == '+':
+            return num1 + num2
+        elif operacao == '-':
+            return num1 - num2
+        elif operacao == '*':
+            return num1 * num2
+        elif operacao == '/':
+            if num2 != 0:
+                return num1 / num2
+            else:
+                return "Divisão por zero não é permitida."
+
+# Função para realizar cálculos com a calculadora
+def realizar_calculos(calculadora, num1, num2, operacao):
+    return calculadora.calcular(num1, num2, operacao)
+
+# Exemplo de uso
+calculadora_simples = CalculadoraSimples()
+
+num1 = int(input("Digite o primeiro número: "))
+num2 = int(input("Digite o segundo número: "))
+
+operacoes = ['+', '-', '*', '/']
+
+for operacao in operacoes:
+    resultado_simples = realizar_calculos(calculadora_simples, num1, num2, operacao)
+
+    print(f"Resultado da calculadora simples ({operacao}): {resultado_simples}")
+
+_______________________________________________________
+
+class Calculadora:
+    def calcular(self, num1, num2, operacao):
+        pass
+class CalculadoraSimples(Calculadora):
+    def calcular(self, num1, num2, operacao):
+        if operacao =='+':
+            return num1 + num2
+        elif operacao =='-':
+            return num1 - num2
+        elif operacao =='*':
+            return num1 * num2
+        elif operacao =='/':
+            if num2 != 0:
+                return num1 / num2
+            else:
+                return "Divisão por zero não é permitida."
+# Função para realizar calculos com a calculadora
+def realizar_calculos(calculadora, num1, num2, operacao):
+    return calculadora.calcular(num1, num2, operacao)
+#Exemplo de uso
+calculadora_simples = CalculadoraSimples()
+num1 = int(input("Digite o primeiro número:"))
+num2 = int(input("Digite o segundo número:"))
+operacoes = ['+', '-', '*', '/']
+for operacao in operacoes:
+    resultado_simples = realizar_calculos(calculadora_simples, )
+
+
+
+
+_____________________________________________________________________________
+
+
+
+
+
+class Contato:
+    def __init__(self, nome, telefone, e_mail):
+        pass
+
+
+________________________________________________________________________
+
+class Contato:
+    def __init__(self, nome, telefone):
+        self.nome = nome
+        self.telefone = telefone
+
+    def apresentar(self):
+        pass
+
+class ContatoPessoal(Contato):
+    def __init__(self, nome, telefone, endereco):
+        super().__init__(nome, telefone)
+        self.endereco = endereco
+
+    def apresentar(self):
+        return f"Nome: {self.nome}\nTelefone: {self.telefone}\nEndereço: {self.endereco}"
+
+class ContatoProfissional(Contato):
+    def __init__(self, nome, telefone, empresa):
+        super().__init__(nome, telefone)
+        self.empresa = empresa
+
+    def apresentar(self):
+        return f"Nome: {self.nome}\nTelefone: {self.telefone}\nEmpresa: {self.empresa}"
+
+# Função para listar os contatos
+def listar_contatos(agenda):
+    for contato in agenda:
+        print(contato.apresentar())
+        print('-' * 30)
+
+# Exemplo de uso
+agenda = []
+
+contato1 = ContatoPessoal("João", "123-456-7890", "Rua A, Cidade X")
+contato2 = ContatoProfissional("Maria", "987-654-3210", "Empresa Y")
+contato3 = ContatoPessoal("Carlos", "555-123-4567", "Rua B, Cidade Z")
+
+agenda.append(contato1)
+agenda.append(contato2)
+agenda.append(contato3)
+
+listar_contatos(agenda)
+__________________________________________________________________________________________
+
+
+
+create database loja;
+create table cliente( nome varchar(45), cpf primary key int(11) primary key, endereco varchar(50), e_mail varchar(30));
+
+
+
+___________________________________________________________________________________________
+
+
+use loja
+insert into produto( idProduto, Nome, valor, quantidade)
+values (1, 'Livro', 20.0, 10);
+
+select*
+from produto;
+
