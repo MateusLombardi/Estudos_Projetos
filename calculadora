@@ -1,0 +1,51 @@
+from tkinter import *
+
+janela = Tk()
+janela.title("Calculadora Simples")
+
+# Função para atualizar a entrada
+def atualizar(valor):
+    entrada.insert(END, valor)
+
+# Função para calcular e exibir o resultado
+def calcular():
+    try:
+        resultado = eval(entrada.get())
+        entrada.delete(0, END)
+        entrada.insert(END, str(resultado))
+    except Exception as e:
+        entrada.delete(0, END)
+        entrada.insert(END, "Erro")
+
+# Função para apagar o conteúdo da entrada
+def apagar():
+    entrada.delete(0, END)
+
+# Criar a entrada
+entrada = Entry(janela, width=16, font=("Arial", 20), bd=5, relief=RIDGE)
+entrada.grid(row=0, column=0, columnspan=4, pady=15)
+
+# Criar botões
+botoes = [
+    '7', '8', '9', '/',
+    '4', '5', '6', '*',
+    '1', '2', '3', '-',
+    '0', '.', '=', '+', 'C'
+]
+
+row_val = 1
+col_val = 0
+
+for botao in botoes:
+    if botao != 'C':
+        Button(janela, text=botao, width=10, height=4, command=lambda b=botao: atualizar(b) if b != '=' else calcular()).grid(row=row_val, column=col_val, padx=5, pady=5)
+    else:
+        Button(janela, text=botao, width=10, height=4, command=apagar).grid(row=row_val, column=col_val, padx=5, pady=5)
+    col_val += 1
+    if col_val > 3:
+        col_val = 0
+        row_val += 1
+
+janela.mainloop()
+
+

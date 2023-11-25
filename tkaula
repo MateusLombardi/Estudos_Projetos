@@ -1,0 +1,49 @@
+from tkinter import *
+
+janela = Tk()
+janela.title("Qual o seu pedido?")
+
+#LARGURA X ALTURA + DISTÂNCIA MARGEM ESQUERDA + DISTANCIA TOPO
+janela.geometry("500x500+200+200")
+
+#DEFINIDO A COR DE FUNDO DA JANELA
+janela.config(bg="red")
+
+#LABELS
+lblNome = Label(janela,text="Pedido", width=10, font="arial")
+lblNome.place(x=100, y=100)
+txtNome = Entry(janela,text="", width=20, font = "arial").place(x=200, y=100)
+
+lblEmail = Label(janela,text="Nome", width=10, font="arial")
+lblEmail.place(x=100, y=150)
+txtEmail = Entry(janela,text="", width=20, font = "arial").place(x=200, y=150)
+
+lblTelefone = Label(janela,text="Endereço", width=10, font="arial")
+lblTelefone.place(x=100, y=200)
+txtTelefone = Entry(janela,text="", width=20, font = "arial").place(x=200, y=200)
+
+lblCpf = Label(janela,text="telefone", width=10, font="arial")
+lblCpf.place(x=100, y=250)
+txtCpf = Entry(janela,text="", width=20, font = "arial").place(x=200, y=250)
+
+#FUNÇÃO DO BOTÃO ENVIAR
+
+def Enviar():
+    lblResultado["text"]="Dados Enviados com Sucesso!"
+
+
+#Botões
+
+btnEnviar = Button(janela, text="Enviar", width=20, command=Enviar , font="arial")
+btnEnviar.place(x=100, y=300)
+
+
+#Label para exibir resultado
+lblResultado = Label(janela,text="Resultado" ,width=40, font="arial")
+lblResultado.place(x=100, y=350)
+
+
+
+
+janela.mainloop()
+
